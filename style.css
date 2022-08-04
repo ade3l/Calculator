@@ -23,12 +23,12 @@ body{
     padding-top: 10px;
     padding-bottom: 5px;
     color: white;
-    font-weight: bolder;
 }
 #result, #calculation{
     margin: 0;
 }
 #result{
+    font-weight: bolder;
     font-size: xx-large;
 }
 #buttons{
