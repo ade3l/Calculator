@@ -16,22 +16,28 @@ body{
 #buttons{
     display: flex;
     flex-direction: column;
-    background-color: #2f383c;
-    gap:10px;
+    background-color: #2a2c34;
+    gap:20px;
+    padding: 20px;
 }
 
 .row{
     display: flex;
-    gap: 10px;
+    gap: 20px;
     justify-content: center;
 }
 
 button{
-    width: 30px;
+    width: 60px;
+    height: 60px;
     text-align: center;
     background-color: #23252d;
     border: none;
     color: white;
+    font-size: 1.325rem;
+    border-radius:25%;
+    appearance: auto;
+    box-shadow: 4px 5px 5px 0px rgb(0 0 0 / 50%);
 }
 
 .teal{
