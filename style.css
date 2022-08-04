@@ -4,8 +4,40 @@ body{
     justify-content: center;
     align-items: center;
     height: 100vh;
+    overflow: hidden;
 }
 
 #calculator {
     background-color: #23252d;
+    display: flex;
+    flex-direction: column;
+}
+
+#buttons{
+    display: flex;
+    flex-direction: column;
+    background-color: #2f383c;
+    gap:10px;
+}
+
+.row{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+button{
+    width: 30px;
+    text-align: center;
+    background-color: #23252d;
+    border: none;
+    color: white;
+}
+
+.teal{
+    color: #68f5cf;
+}
+
+.pink{
+    color: #dd8183;
 }
