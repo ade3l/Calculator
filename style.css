@@ -5,12 +5,14 @@ body{
     align-items: center;
     height: 100vh;
     overflow: hidden;
+    font-family: 'Roboto', sans-serif;
 }
 
 #calculator {
     background-color: #23252d;
     display: flex;
     flex-direction: column;
+    border-radius: 8% 8% 8% 8%;
 }
 
 #display{
@@ -22,19 +24,20 @@ body{
     padding-bottom: 5px;
     color: white;
     font-weight: bolder;
-    font-size: xx-large;
 }
 #result, #calculation{
     margin: 0;
 }
-
+#result{
+    font-size: xx-large;
+}
 #buttons{
     display: flex;
     flex-direction: column;
     background-color: #2a2c34;
     gap:20px;
     padding: 20px;
-    border-radius: 8% 8% 0% 0%;
+    border-radius: 8% 8% 8% 8%;
 }
 
 .row{
