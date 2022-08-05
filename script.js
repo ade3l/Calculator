@@ -16,7 +16,7 @@ let result = ""
 let resultText = document.querySelector('#result')
 let calculationText = document.querySelector('#calculation')
 let funcButtons = document.querySelectorAll('.function')
-
+let numButtons = document.querySelectorAll('.number');
 function AC(){
     num1 = "0"
     num2 = "0"
@@ -40,7 +40,13 @@ AC()
 funcButtons.forEach(button=>{
     button.addEventListener('click',()=>{
         if(button.id =="ac") AC();
-        if(calculation!=""){
+        if(button.id == 'equal') {
+            result = operand(result,num1)
+            num2 = result
+            num1="0"
+            updateDisplay()
+        }
+        if(calculation!="" && button.id!='equal'){
             switch(button.id){
                 case 'add': operand = add; break
                 case 'subtract': operand = subtract; break
@@ -49,10 +55,19 @@ funcButtons.forEach(button=>{
             }
             calculation+=button.innerText
             result= operand(num1,num2);
-            num1 = result
+            num2 = result
+            num1="0"
             updateDisplay()
+            console.log(num1,num2,result)
         }
     })
 })
 
-
+numButtons.forEach(button=>{
+    button.addEventListener('click',()=>{
+        calculation+=button.getAttribute('data-key');
+        num1+=button.getAttribute('data-key');
+        console.log(num1)            
+        updateDisplay();
+    })
+})
