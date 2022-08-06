@@ -20,7 +20,7 @@ let calculated = false
 
 
 function evaluate(){
-    let exp = calculationText.innerText.split(/[+\-\×\÷\%]/)
+    let exp = calculationText.innerText.split(/[+\-\×\÷\%]/,2)
     let num1 =exp[0]
     let num2 = exp[1]
     switch(calculationText.innerText[num1.length]){
@@ -54,8 +54,11 @@ function AC(){
 funcButtons.forEach(button=>{
     button.addEventListener('click',()=>{
         if(button.id!='ac' && button.id!='equal' && !operandSelected){
+            if(button.id == 'invert')
+                alert("Coming soon")
+            else{
             updateCalculation(button.innerText, modeAdd)
-            operandSelected = true
+            operandSelected = true}
         }
         if(button.id=='equal'){
             if(!calculated)
