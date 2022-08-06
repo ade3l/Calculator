@@ -39,8 +39,13 @@ const modeRem = 1;
 function updateCalculation(character, mode){
     if(mode == modeAdd)
         calculationText.innerText += character
-    // else if(mode == modeRem)
-    //     calculationText.innerText -=character
+    else if(mode == modeRem)
+        {   console.log("hel");
+            if(calculationText[calculationText.length-1] in ['+','-','×','÷',"%"]){
+                operandSelected = false;
+            }
+            calculationText.innerText =calculationText.innerText.slice(0,-1)
+        }
 }
 function updateResult (result){resultText.innerText = result};
 
@@ -53,7 +58,7 @@ function AC(){
 
 funcButtons.forEach(button=>{
     button.addEventListener('click',()=>{
-        if(button.id!='ac' && button.id!='equal' && !operandSelected){
+        if(button.id!='ac' && button.id!='equal' && button.id!='backspace'&& !operandSelected){
             if(button.id == 'invert')
                 alert("Coming soon")
             else{
@@ -66,6 +71,9 @@ funcButtons.forEach(button=>{
         }
         if(button.id == 'ac'){
             AC()
+        }
+        if(button.id=='backspace' && !calculated){
+            updateCalculation("", modeRem)
         }
     })
 })
